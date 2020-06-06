@@ -31,7 +31,6 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
             "${gmock_SOURCE_DIR}/include")
 endif()
 
-
 set(CMAKE_CXX_STANDARD 14)
 
 #find_package(GTest REQUIRED)
