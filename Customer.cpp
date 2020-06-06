@@ -9,20 +9,22 @@ using std::vector;
 
 using namespace std;
 
-string Customer::statement()
-{
+string Customer::statement() {
+
     double totalAmount = 0;
     int frequentRenterPoints = 0;
+
     vector< Rental >::iterator iter = _rentals.begin();
     vector< Rental >::iterator iter_end = _rentals.end();
+
     ostringstream result;
+
     result << "Rental Record for " << getName() << "\n";
+
     for ( ; iter != iter_end; ++iter ) {
-        double thisAmount = 0;
+
         Rental each = *iter;
 
-        //get amount for each rentals
-        thisAmount = amountForRentale(each);
 
         // add frequent renter points
         frequentRenterPoints++;
@@ -32,8 +34,8 @@ string Customer::statement()
 
         // show figures for this rental
         result << "\t" << each.getMovie().getTitle() << "\t"
-               << thisAmount << "\n";
-        totalAmount += thisAmount;
+               << amountForRental(each) << "\n";
+        totalAmount += amountForRental(each);
     }
     // add footer lines
     result << "Amount owed is " << totalAmount << "\n";
@@ -42,7 +44,7 @@ string Customer::statement()
     return result.str();
 }
 
-double Customer::amountForRentale(Rental each) {
+double Customer::amountForRental(Rental each) {
 
     double result = 0;
 
