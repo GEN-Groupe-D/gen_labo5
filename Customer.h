@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "Rental.h"
+#include "RentalCalculator.h"
 
 class Customer {
 public:
@@ -32,15 +33,14 @@ private:
 
     double totalAmount();
 
-    int calculateFrequentRenterPoints();
-
-    std::string renderPlainText();
+    int calculateFrequentRenterPoints(Rental eachRental);
 
     std::string renderPlainText(StatementData data);
 
     std::vector<std::pair<std::string, double>> enrichRental();
 
     StatementData CreateStatementData();
+
 };
 
 inline Customer::

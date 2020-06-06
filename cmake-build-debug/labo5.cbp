@@ -390,6 +390,9 @@
 		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/Rental.h">
 			<Option target="labo5"/>
 		</Unit>
+		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/RentalCalculator.h">
+			<Option target="labo5"/>
+		</Unit>
 		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-src/googlemock/src/gmock-all.cc">
 			<Option target="gmock"/>
 		</Unit>
