@@ -31,8 +31,6 @@ TEST_F(ConsumerTest, ConsumerStatementValue){
 
     string expectedStatement = "Rental Record for Olivier\n\tKarate Kid\t9.5\n\tAvengers: Endgame\t15\n\tSnow White\t1.5\nAmount owed is 26\nYou earned 4 frequent renter points";
 
-    std::cout << customer.statement() << std::endl;
-
     ASSERT_EQ(customer.statement(), expectedStatement);
 }
 

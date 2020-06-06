@@ -2,27 +2,53 @@
 #include <sstream>
 #include "Customer.h"
 
+
 using std::ostringstream;
 using std::vector;
 
 using namespace std;
 
-string Customer::statement() {
 
-    ostringstream result;
+vector<pair<string, double>> Customer::enrichRental() {
 
-    result << "Rental Record for " << getName() << "\n";
+    vector<pair<string, double>> result;
 
     for (Rental eachRental : _rentals) {
 
+        result.push_back(make_pair(eachRental.getMovie().getTitle(), eachRental.amount()));
+    }
+
+    return result;
+}
+
+string Customer::statement() {
+
+    StatementData statementData = StatementData();
+
+    statementData.customerName = getName();
+    statementData.rentalsInfos = enrichRental();
+    statementData.totalAmount = totalAmount();
+    statementData.frequentRenterPoints = calculateFrequentRenterPoints();
+
+    return renderPlainText(statementData);
+}
+
+string Customer::renderPlainText(StatementData data) {
+
+    ostringstream result;
+
+    result << "Rental Record for " << data.customerName << "\n";
+
+    for (auto rentalInfo: data.rentalsInfos) {
+
         // show figures for this rental
-        result << "\t" << eachRental.getMovie().getTitle() << "\t" << eachRental.amount() << "\n";
+        result << "\t" << rentalInfo.first << "\t" << rentalInfo.second << "\n";
 
     }
 
     // add footer lines
-    result << "Amount owed is " << totalAmount() << "\n";
-    result << "You earned " << calculateFrequentRenterPoints()
+    result << "Amount owed is " << data.totalAmount << "\n";
+    result << "You earned " << data.frequentRenterPoints
            << " frequent renter points";
 
     return result.str();

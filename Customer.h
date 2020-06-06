@@ -18,9 +18,27 @@ private:
     std::string _name;
     std::vector< Rental > _rentals;
 
+    struct StatementData {
+
+        std::string customerName;
+
+        //contains movie title, amount of this movie rent
+        std::vector<std::pair<std::string, double>> rentalsInfos;
+
+        double totalAmount;
+        int frequentRenterPoints;
+
+    };
+
     double totalAmount();
 
     int calculateFrequentRenterPoints();
+
+    std::string renderPlainText();
+
+    std::string renderPlainText(StatementData data);
+
+    std::vector<std::pair<std::string, double>> enrichRental();
 };
 
 inline Customer::
