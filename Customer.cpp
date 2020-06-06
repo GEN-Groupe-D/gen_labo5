@@ -11,22 +11,11 @@ using namespace std;
 
 string Customer::statement() {
 
-    int frequentRenterPoints = 0;
-
     ostringstream result;
 
     result << "Rental Record for " << getName() << "\n";
 
     for (Rental eachRental : _rentals) {
-
-        // add frequent renter points
-        frequentRenterPoints++;
-
-        // add bonus for a two day new release rental
-        if ((eachRental.getMovie().getPriceCode() == Movie::NEW_RELEASE) && eachRental.getDaysRented() > 1 ){
-
-            frequentRenterPoints++;
-        }
 
         // show figures for this rental
         result << "\t" << eachRental.getMovie().getTitle() << "\t" << amountForRental(eachRental) << "\n";
@@ -35,10 +24,29 @@ string Customer::statement() {
 
     // add footer lines
     result << "Amount owed is " << totalAmount() << "\n";
-    result << "You earned " << frequentRenterPoints
+    result << "You earned " << calculateFrequentRenterPoints()
            << " frequent renter points";
 
     return result.str();
+}
+
+int Customer::calculateFrequentRenterPoints() {
+
+    int result = 0;
+
+    for (Rental eachRental : _rentals) {
+
+        // add frequent renter points
+        result++;
+
+        // add bonus for a two day new release rental
+        if ((eachRental.getMovie().getPriceCode() == Movie::NEW_RELEASE) && eachRental.getDaysRented() > 1 ){
+
+            result++;
+        }
+    }
+
+    return result;
 }
 
 double Customer::totalAmount() {
