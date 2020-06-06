@@ -4,6 +4,7 @@ language: cpp
 compiler:
   - gcc
 
+
 before_install:
   - sudo apt-get purge cmake
 
@@ -11,6 +12,9 @@ addons:
   apt:
     packages:
       - cmake
+      - g++-7
+env:
+  - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
 
 before_script:
   - mkdir build
