@@ -5,6 +5,7 @@ CMakeFiles/labo5.dir/Customer.cpp.o: ../Customer.cpp
 CMakeFiles/labo5.dir/Customer.cpp.o: ../Customer.h
 CMakeFiles/labo5.dir/Customer.cpp.o: ../Movie.h
 CMakeFiles/labo5.dir/Customer.cpp.o: ../Rental.h
+CMakeFiles/labo5.dir/Customer.cpp.o: ../RentalCalculator.h
 
 CMakeFiles/labo5.dir/Movie.cpp.o: ../Movie.cpp
 CMakeFiles/labo5.dir/Movie.cpp.o: ../Movie.h
@@ -16,6 +17,7 @@ CMakeFiles/labo5.dir/Rental.cpp.o: ../Rental.h
 CMakeFiles/labo5.dir/main.cpp.o: ../Customer.h
 CMakeFiles/labo5.dir/main.cpp.o: ../Movie.h
 CMakeFiles/labo5.dir/main.cpp.o: ../Rental.h
+CMakeFiles/labo5.dir/main.cpp.o: ../RentalCalculator.h
 CMakeFiles/labo5.dir/main.cpp.o: ../main.cpp
 CMakeFiles/labo5.dir/main.cpp.o: googletest-src/googlemock/include/gmock/gmock-actions.h
 CMakeFiles/labo5.dir/main.cpp.o: googletest-src/googlemock/include/gmock/gmock-cardinalities.h

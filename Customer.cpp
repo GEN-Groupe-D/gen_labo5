@@ -1,6 +1,7 @@
 // Customer.cpp
 #include <sstream>
 #include "Customer.h"
+#include "RentalCalculator.h"
 
 
 using std::ostringstream;
@@ -20,10 +21,20 @@ Customer::StatementData Customer::CreateStatementData(){
 
     StatementData statementData = StatementData();
 
+
     statementData.customerName = getName();
     statementData.rentalsInfos = enrichRental();
     statementData.totalAmount = totalAmount();
-    statementData.frequentRenterPoints = calculateFrequentRenterPoints();
+
+    statementData.frequentRenterPoints = 0;
+
+    for (const Rental& eachRental : _rentals) {
+
+        RentalCalculator calculator = RentalCalculator(eachRental.getMovie().getPriceCode(), eachRental.getDaysRented());
+
+        statementData.frequentRenterPoints += calculator.getFrequentRenterPoints();
+    }
+
 
     return statementData;
 }
@@ -32,9 +43,11 @@ vector<pair<string, double>> Customer::enrichRental() {
 
     vector<pair<string, double>> result;
 
-    for (Rental eachRental : _rentals) {
+    for (const Rental& eachRental : _rentals) {
 
-        result.emplace_back(eachRental.getMovie().getTitle(), eachRental.amount());
+        RentalCalculator calculator = RentalCalculator(eachRental.getMovie().getPriceCode(), eachRental.getDaysRented());
+
+        result.emplace_back(eachRental.getMovie().getTitle(), calculator.getAmount());
     }
 
     return result;
@@ -61,11 +74,11 @@ string Customer::renderPlainText(StatementData data) {
     return result.str();
 }
 
-int Customer::calculateFrequentRenterPoints() {
+int Customer::calculateFrequentRenterPoints(Rental eachRental) {
 
     int result = 0;
 
-    for (Rental eachRental : _rentals) {
+    //for (Rental eachRental : _rentals) {
 
         // add frequent renter points
         result++;
@@ -75,7 +88,7 @@ int Customer::calculateFrequentRenterPoints() {
 
             result++;
         }
-    }
+    //}
 
     return result;
 }
