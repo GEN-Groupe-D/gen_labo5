@@ -21,6 +21,8 @@ private:
     double amountForRental(Rental each);
 
     double totalAmount();
+
+    int calculateFrequentRenterPoints();
 };
 
 inline Customer::
