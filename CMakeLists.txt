@@ -36,6 +36,10 @@ set(CMAKE_CXX_STANDARD 14)
 #find_package(GTest REQUIRED)
 include_directories(.)
 
+option(BUILD_TESTS "Build all tests." OFF)
+
+enable_testing()
+
 add_executable(
         labo5
         Customer.cpp
@@ -50,4 +54,6 @@ target_link_libraries(
         gtest
         gmock_main)
 
-add_test(UnitTests labo5)
+
+add_test(NAME UnitTests COMMAND labo5)
+

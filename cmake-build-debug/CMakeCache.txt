@@ -20,6 +20,9 @@ BUILD_GMOCK:BOOL=ON
 //Build the testing tree.
 BUILD_TESTING:BOOL=ON
 
+//Build all tests.
+BUILD_TESTS:BOOL=OFF
+
 //Path to a program.
 BZRCOMMAND:FILEPATH=BZRCOMMAND-NOTFOUND
 
