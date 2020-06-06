@@ -6,7 +6,7 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      #- gcc-7
+      - gcc-4.8
       - g++-4.8
 
 before_script:
@@ -19,7 +19,7 @@ before_script:
   - cmake ..
 
 script:
-  #- export CC=gcc-7
-  - export CXX="g++-4.8"
+  - export CC="gcc-7 -std=c++11"
+  - export CXX="g++-4.8 -std=c++11"
   - gcc -v && g++ -v && cmake --version
   - make
