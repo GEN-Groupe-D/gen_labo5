@@ -33,7 +33,6 @@ private:
 
     double totalAmount();
 
-    int calculateFrequentRenterPoints(Rental eachRental);
 
     std::string renderPlainText(StatementData data);
 
@@ -41,6 +40,7 @@ private:
 
     StatementData CreateStatementData();
 
+    RentalCalculator * createRentalCalculator(int moviePriceCode, int daysRented);
 };
 
 inline Customer::

@@ -2,6 +2,9 @@
 #include <sstream>
 #include "Customer.h"
 #include "RentalCalculator.h"
+#include "RegularCalculator.h"
+#include "NewReleaseCalculator.h"
+#include "ChildrensCalculator.h"
 
 
 using std::ostringstream;
@@ -30,13 +33,30 @@ Customer::StatementData Customer::CreateStatementData(){
 
     for (const Rental& eachRental : _rentals) {
 
-        RentalCalculator calculator = RentalCalculator(eachRental.getMovie().getPriceCode(), eachRental.getDaysRented());
+        RentalCalculator* calculator = createRentalCalculator(eachRental.getMovie().getPriceCode(), eachRental.getDaysRented());
 
-        statementData.frequentRenterPoints += calculator.getFrequentRenterPoints();
+        statementData.frequentRenterPoints += calculator->getFrequentRenterPoints();
+
+        delete calculator;
     }
 
 
     return statementData;
+}
+
+RentalCalculator * Customer::createRentalCalculator(int moviePriceCode, int daysRented) {
+
+    switch ( moviePriceCode ) {
+        case Movie::REGULAR:
+            return new RegularCalculator(moviePriceCode, daysRented);
+            break;
+        case Movie::NEW_RELEASE:
+            return new NewReleaseCalculator(moviePriceCode, daysRented);
+            break;
+        case Movie::CHILDRENS:
+            return new ChildrensCalculator(moviePriceCode, daysRented);
+            break;
+    }
 }
 
 vector<pair<string, double>> Customer::enrichRental() {
@@ -45,9 +65,11 @@ vector<pair<string, double>> Customer::enrichRental() {
 
     for (const Rental& eachRental : _rentals) {
 
-        RentalCalculator calculator = RentalCalculator(eachRental.getMovie().getPriceCode(), eachRental.getDaysRented());
+        RentalCalculator* calculator = createRentalCalculator(eachRental.getMovie().getPriceCode(), eachRental.getDaysRented());
 
-        result.emplace_back(eachRental.getMovie().getTitle(), calculator.getAmount());
+        result.emplace_back(eachRental.getMovie().getTitle(), calculator->getAmount());
+
+        delete calculator;
     }
 
     return result;
@@ -74,31 +96,17 @@ string Customer::renderPlainText(StatementData data) {
     return result.str();
 }
 
-int Customer::calculateFrequentRenterPoints(Rental eachRental) {
-
-    int result = 0;
-
-    //for (Rental eachRental : _rentals) {
-
-        // add frequent renter points
-        result++;
-
-        // add bonus for a two day new release rental
-        if ((eachRental.getMovie().getPriceCode() == Movie::NEW_RELEASE) && eachRental.getDaysRented() > 1 ){
-
-            result++;
-        }
-    //}
-
-    return result;
-}
-
 double Customer::totalAmount() {
 
     double result = 0;
 
     for (Rental eachRental : _rentals) {
-        result += eachRental.amount();
+
+        RentalCalculator* calculator = createRentalCalculator(eachRental.getMovie().getPriceCode(), eachRental.getDaysRented());
+
+        result += calculator->getAmount();
+
+        delete calculator;
     }
 
     return result;
