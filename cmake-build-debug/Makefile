@@ -650,6 +650,33 @@ Movie.cpp.s:
 	$(MAKE) -f CMakeFiles/labo5.dir/build.make CMakeFiles/labo5.dir/Movie.cpp.s
 .PHONY : Movie.cpp.s
 
+Rental.o: Rental.cpp.o
+
+.PHONY : Rental.o
+
+# target to build an object file
+Rental.cpp.o:
+	$(MAKE) -f CMakeFiles/labo5.dir/build.make CMakeFiles/labo5.dir/Rental.cpp.o
+.PHONY : Rental.cpp.o
+
+Rental.i: Rental.cpp.i
+
+.PHONY : Rental.i
+
+# target to preprocess a source file
+Rental.cpp.i:
+	$(MAKE) -f CMakeFiles/labo5.dir/build.make CMakeFiles/labo5.dir/Rental.cpp.i
+.PHONY : Rental.cpp.i
+
+Rental.s: Rental.cpp.s
+
+.PHONY : Rental.s
+
+# target to generate assembly for a file
+Rental.cpp.s:
+	$(MAKE) -f CMakeFiles/labo5.dir/build.make CMakeFiles/labo5.dir/Rental.cpp.s
+.PHONY : Rental.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -729,6 +756,9 @@ help:
 	@echo "... Movie.o"
 	@echo "... Movie.i"
 	@echo "... Movie.s"
+	@echo "... Rental.o"
+	@echo "... Rental.i"
+	@echo "... Rental.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

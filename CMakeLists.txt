@@ -46,7 +46,7 @@ add_executable(
         main.cpp
         Movie.cpp
         Movie.h
-        Rental.h)
+        Rental.h Rental.cpp)
 
 target_link_libraries(
         labo5

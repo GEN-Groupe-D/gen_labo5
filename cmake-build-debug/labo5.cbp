@@ -384,6 +384,9 @@
 		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/Movie.h">
 			<Option target="labo5"/>
 		</Unit>
+		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/Rental.cpp">
+			<Option target="labo5"/>
+		</Unit>
 		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/Rental.h">
 			<Option target="labo5"/>
 		</Unit>
