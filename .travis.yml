@@ -26,4 +26,5 @@ script:
   #- export CC="gcc-7 -std=c++11"
   #- export CXX="g++-4.8 -std=c++11"
   - gcc -v && g++ -v && cmake --version
-  - cmake
+  - cmake .
+  - cmake --build
