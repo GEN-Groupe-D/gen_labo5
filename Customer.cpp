@@ -23,24 +23,27 @@ string Customer::statement() {
 
     for ( ; iter != iter_end; ++iter ) {
 
-        Rental each = *iter;
-
+        Rental eachRental = *iter;
 
         // add frequent renter points
         frequentRenterPoints++;
+
         // add bonus for a two day new release rental
-        if ( ( each.getMovie().getPriceCode() == Movie::NEW_RELEASE )
-             && each.getDaysRented() > 1 ) frequentRenterPoints++;
+        if ((eachRental.getMovie().getPriceCode() == Movie::NEW_RELEASE) && eachRental.getDaysRented() > 1 ){
+
+            frequentRenterPoints++;
+        }
 
         // show figures for this rental
-        result << "\t" << each.getMovie().getTitle() << "\t"
-               << amountForRental(each) << "\n";
-        totalAmount += amountForRental(each);
+        result << "\t" << eachRental.getMovie().getTitle() << "\t" << amountForRental(eachRental) << "\n";
+        totalAmount += amountForRental(eachRental);
     }
+
     // add footer lines
     result << "Amount owed is " << totalAmount << "\n";
     result << "You earned " << frequentRenterPoints
            << " frequent renter points";
+
     return result.str();
 }
 
