@@ -1,29 +1,14 @@
-
+dist: trusty
 language: cpp
-
-compiler:
-  - gcc
-
-
-#before_install:
-#  - sudo apt-get purge cmake
-
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-precise-3.8
     packages:
-      - cmake
-      - g++-6
-
-install:
-  - "[ $CXX = g++ ] && export CXX=g++-6 || true"
-
-
-#before_script:
-  #  - mkdir build
-  #- cd build
-  #- cmake ..
-
-script: make
+      - gcc-7
+      - g++-7
+script:
+  - export CC=gcc-7
+  - export CXX=g++-7
+  - gcc -v && g++ -v && cmake --version
+  - make
