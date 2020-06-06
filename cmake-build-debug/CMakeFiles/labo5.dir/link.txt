@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/labo5.dir/Customer.cpp.o CMakeFiles/labo5.dir/main.cpp.o CMakeFiles/labo5.dir/Movie.cpp.o  -o labo5 
