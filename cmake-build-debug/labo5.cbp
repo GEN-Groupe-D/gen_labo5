@@ -372,6 +372,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/ChildrensCalculator.h">
+			<Option target="labo5"/>
+		</Unit>
 		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/Customer.cpp">
 			<Option target="labo5"/>
 		</Unit>
@@ -382,6 +385,12 @@
 			<Option target="labo5"/>
 		</Unit>
 		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/Movie.h">
+			<Option target="labo5"/>
+		</Unit>
+		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/NewReleaseCalculator.h">
+			<Option target="labo5"/>
+		</Unit>
+		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/RegularCalculator.h">
 			<Option target="labo5"/>
 		</Unit>
 		<Unit filename="/home/thomas/heigvd/gen/gen_labo5/Rental.cpp">
