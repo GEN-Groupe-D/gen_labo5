@@ -34,9 +34,11 @@ endif()
 
 set(CMAKE_CXX_STANDARD 14)
 
+#find_package(GTest REQUIRED)
 include_directories(.)
 
-add_executable(labo5
+add_executable(
+        labo5
         Customer.cpp
         Customer.h
         main.cpp
@@ -49,4 +51,4 @@ target_link_libraries(
         gtest
         gmock_main)
 
-#add_test(NAME example_test COMMAND example)
+add_test(UnitTests labo5)
