@@ -18,7 +18,7 @@ private:
     std::string _name;
     std::vector< Rental > _rentals;
 
-    double amountForRentale(Rental each);
+    double amountForRental(Rental each);
 };
 
 inline Customer::
