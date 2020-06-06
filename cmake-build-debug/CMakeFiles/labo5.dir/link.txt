@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/labo5.dir/Customer.cpp.o CMakeFiles/labo5.dir/main.cpp.o CMakeFiles/labo5.dir/Movie.cpp.o  -o labo5 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/labo5.dir/Customer.cpp.o CMakeFiles/labo5.dir/main.cpp.o CMakeFiles/labo5.dir/Movie.cpp.o  -o labo5 lib/libgtestd.a lib/libgmock_maind.a lib/libgmockd.a lib/libgtestd.a -lpthread 

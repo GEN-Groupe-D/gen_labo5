@@ -2,6 +2,7 @@
 #include <sstream>
 #include <vector>
 #include "Customer.h"
+#include "gtest/gtest.h"
 
 using std::ostringstream;
 using std::vector;

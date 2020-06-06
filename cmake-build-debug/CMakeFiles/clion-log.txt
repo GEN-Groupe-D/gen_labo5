@@ -1,18 +1,35 @@
 /home/thomas/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6494.38/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/thomas/heigvd/gen/gen_labo5
--- The C compiler identification is GNU 9.3.0
--- The CXX compiler identification is GNU 9.3.0
--- Check for working C compiler: /usr/bin/cc
--- Check for working C compiler: /usr/bin/cc -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: /usr/bin/c++
--- Check for working CXX compiler: /usr/bin/c++ -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
+CMake Warning (dev) at CMakeLists.txt:2 (project):
+  Policy CMP0048 is not set: project() command manages VERSION variables.
+  Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  The following variable(s) would be set to empty:
+
+    CMAKE_PROJECT_VERSION
+    CMAKE_PROJECT_VERSION_MAJOR
+    CMAKE_PROJECT_VERSION_MINOR
+    CMAKE_PROJECT_VERSION_PATCH
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Downloading/updating googletest
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-download
+make[1] : on entre dans le répertoire « /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-download »
+make[2] : on entre dans le répertoire « /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-download »
+Scanning dependencies of target googletest-download
+make[2] : on quitte le répertoire « /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-download »
+make[2] : on entre dans le répertoire « /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-download »
+[ 11%] Skipping update step for 'googletest-download'
+[ 22%] No configure step for 'googletest-download'
+[ 33%] No build step for 'googletest-download'
+[ 44%] No install step for 'googletest-download'
+[ 55%] No test step for 'googletest-download'
+[ 66%] Completed 'googletest-download'
+make[2] : on quitte le répertoire « /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-download »
+[100%] Built target googletest-download
+make[1] : on quitte le répertoire « /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-download »
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug
