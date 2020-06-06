@@ -8,7 +8,7 @@ addons:
     packages:
       - g++-4.9
 env:
-  - MATRIX_EVAL="CC=gcc-4.9 -std=c++11 && CXX=g++-4.9 -std=c++11"
+  - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
 
 before_install:
   - eval "${MATRIX_EVAL}"
@@ -20,10 +20,10 @@ before_script:
   - cd build
   # run cmake; here we assume that the project's
   # top-level CMakeLists.txt is located at '..'
-  - cmake ..
+  - cd ..
 
 script:
   #- export CC="gcc-7 -std=c++11"
   #- export CXX="g++-4.8 -std=c++11"
   - gcc -v && g++ -v && cmake --version
-  - make
+  - cmake
