@@ -5,20 +5,25 @@ compiler:
   - gcc
 
 
-before_install:
-  - sudo apt-get purge cmake
+#before_install:
+#  - sudo apt-get purge cmake
 
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-precise-3.8
     packages:
       - cmake
-      - g++-7
-env:
-  - MATRIX_EVAL="CC=gcc-7 && CXX=g++-7"
+      - g++-6
 
-before_script:
-  - mkdir build
-  - cd build
-  - cmake ..
+install:
+  - "[ $CXX = g++ ] && export CXX=g++-6 || true"
+
+
+#before_script:
+  #  - mkdir build
+  #- cd build
+  #- cmake ..
 
 script: make
