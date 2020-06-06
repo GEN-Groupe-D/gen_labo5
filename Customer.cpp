@@ -9,19 +9,14 @@ using std::vector;
 using namespace std;
 
 
-vector<pair<string, double>> Customer::enrichRental() {
 
-    vector<pair<string, double>> result;
-
-    for (Rental eachRental : _rentals) {
-
-        result.push_back(make_pair(eachRental.getMovie().getTitle(), eachRental.amount()));
-    }
-
-    return result;
-}
 
 string Customer::statement() {
+
+    return renderPlainText(CreateStatementData());
+}
+
+Customer::StatementData Customer::CreateStatementData(){
 
     StatementData statementData = StatementData();
 
@@ -30,7 +25,19 @@ string Customer::statement() {
     statementData.totalAmount = totalAmount();
     statementData.frequentRenterPoints = calculateFrequentRenterPoints();
 
-    return renderPlainText(statementData);
+    return statementData;
+}
+
+vector<pair<string, double>> Customer::enrichRental() {
+
+    vector<pair<string, double>> result;
+
+    for (Rental eachRental : _rentals) {
+
+        result.emplace_back(eachRental.getMovie().getTitle(), eachRental.amount());
+    }
+
+    return result;
 }
 
 string Customer::renderPlainText(StatementData data) {

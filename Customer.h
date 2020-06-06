@@ -39,6 +39,8 @@ private:
     std::string renderPlainText(StatementData data);
 
     std::vector<std::pair<std::string, double>> enrichRental();
+
+    StatementData CreateStatementData();
 };
 
 inline Customer::
