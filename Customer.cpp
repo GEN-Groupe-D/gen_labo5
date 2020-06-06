@@ -11,7 +11,6 @@ using namespace std;
 
 string Customer::statement() {
 
-    double totalAmount = 0;
     int frequentRenterPoints = 0;
 
     ostringstream result;
@@ -31,15 +30,26 @@ string Customer::statement() {
 
         // show figures for this rental
         result << "\t" << eachRental.getMovie().getTitle() << "\t" << amountForRental(eachRental) << "\n";
-        totalAmount += amountForRental(eachRental);
+
     }
 
     // add footer lines
-    result << "Amount owed is " << totalAmount << "\n";
+    result << "Amount owed is " << totalAmount() << "\n";
     result << "You earned " << frequentRenterPoints
            << " frequent renter points";
 
     return result.str();
+}
+
+double Customer::totalAmount() {
+
+    double result = 0;
+
+    for (Rental eachRental : _rentals) {
+        result += amountForRental(eachRental);
+    }
+
+    return result;
 }
 
 double Customer::amountForRental(Rental each) {

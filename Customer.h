@@ -19,6 +19,8 @@ private:
     std::vector< Rental > _rentals;
 
     double amountForRental(Rental each);
+
+    double totalAmount();
 };
 
 inline Customer::
