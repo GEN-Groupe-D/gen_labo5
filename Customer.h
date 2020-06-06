@@ -18,8 +18,6 @@ private:
     std::string _name;
     std::vector< Rental > _rentals;
 
-    double amountForRental(Rental each);
-
     double totalAmount();
 
     int calculateFrequentRenterPoints();

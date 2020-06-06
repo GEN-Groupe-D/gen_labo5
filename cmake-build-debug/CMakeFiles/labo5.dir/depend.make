@@ -5,29 +5,13 @@ CMakeFiles/labo5.dir/Customer.cpp.o: ../Customer.cpp
 CMakeFiles/labo5.dir/Customer.cpp.o: ../Customer.h
 CMakeFiles/labo5.dir/Customer.cpp.o: ../Movie.h
 CMakeFiles/labo5.dir/Customer.cpp.o: ../Rental.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/gtest-death-test.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/gtest-matchers.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/gtest-message.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/gtest-param-test.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/gtest-printers.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/gtest-test-part.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/gtest-typed-test.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/gtest.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/gtest_pred_impl.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/gtest_prod.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/internal/custom/gtest-port.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/internal/custom/gtest-printers.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/internal/gtest-death-test-internal.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/internal/gtest-filepath.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/internal/gtest-internal.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/internal/gtest-param-util.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/internal/gtest-port-arch.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/internal/gtest-port.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/internal/gtest-string.h
-CMakeFiles/labo5.dir/Customer.cpp.o: googletest-src/googletest/include/gtest/internal/gtest-type-util.h
 
 CMakeFiles/labo5.dir/Movie.cpp.o: ../Movie.cpp
 CMakeFiles/labo5.dir/Movie.cpp.o: ../Movie.h
+
+CMakeFiles/labo5.dir/Rental.cpp.o: ../Movie.h
+CMakeFiles/labo5.dir/Rental.cpp.o: ../Rental.cpp
+CMakeFiles/labo5.dir/Rental.cpp.o: ../Rental.h
 
 CMakeFiles/labo5.dir/main.cpp.o: ../Customer.h
 CMakeFiles/labo5.dir/main.cpp.o: ../Movie.h

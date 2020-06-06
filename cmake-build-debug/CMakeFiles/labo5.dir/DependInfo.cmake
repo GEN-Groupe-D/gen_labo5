@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/thomas/heigvd/gen/gen_labo5/Customer.cpp" "/home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/CMakeFiles/labo5.dir/Customer.cpp.o"
   "/home/thomas/heigvd/gen/gen_labo5/Movie.cpp" "/home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/CMakeFiles/labo5.dir/Movie.cpp.o"
+  "/home/thomas/heigvd/gen/gen_labo5/Rental.cpp" "/home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/CMakeFiles/labo5.dir/Rental.cpp.o"
   "/home/thomas/heigvd/gen/gen_labo5/main.cpp" "/home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/CMakeFiles/labo5.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
