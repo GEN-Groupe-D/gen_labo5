@@ -3,7 +3,14 @@ language: cpp
 
 compiler:
   - gcc
-  - clang
+
+before_install:
+  - sudo apt-get purge cmake
+
+addons:
+  apt:
+    packages:
+      - cmake
 
 before_script:
   - mkdir build
