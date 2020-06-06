@@ -1,6 +1,16 @@
 #include <iostream>
 
 #include "Customer.h"
+#include "gtest/gtest.h"
+#include "gmock/gmock.h"
+
+
+// Simple test, does not use gmock
+TEST(Dummy, foobar)
+{
+    EXPECT_EQ(1, 1);
+}
+
 
 int main() {
 
@@ -11,5 +21,6 @@ int main() {
 
     std::cout << customer.statement() << std::endl;
 
-    return 0;
+    ::testing::InitGoogleTest();
+    return RUN_ALL_TESTS();
 }

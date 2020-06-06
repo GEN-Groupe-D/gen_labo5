@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/thomas/heigvd/gen/gen_labo5/. 
+CXX_INCLUDES = -I/home/thomas/heigvd/gen/gen_labo5/. -isystem /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-src/googletest/include -isystem /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-src/googletest -isystem /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-src/googlemock/include -isystem /home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/googletest-src/googlemock 
 

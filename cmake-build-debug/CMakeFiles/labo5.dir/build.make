@@ -109,6 +109,10 @@ labo5: CMakeFiles/labo5.dir/Customer.cpp.o
 labo5: CMakeFiles/labo5.dir/main.cpp.o
 labo5: CMakeFiles/labo5.dir/Movie.cpp.o
 labo5: CMakeFiles/labo5.dir/build.make
+labo5: lib/libgtestd.a
+labo5: lib/libgmock_maind.a
+labo5: lib/libgmockd.a
+labo5: lib/libgtestd.a
 labo5: CMakeFiles/labo5.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thomas/heigvd/gen/gen_labo5/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable labo5"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/labo5.dir/link.txt --verbose=$(VERBOSE)
