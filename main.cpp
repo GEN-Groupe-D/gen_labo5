@@ -3,6 +3,9 @@
 #include "Customer.h"
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
+#include "NewReleaseCalculator.h"
+#include "RegularCalculator.h"
+#include "ChildrensCalculator.h"
 
 using namespace std;
 
@@ -18,13 +21,71 @@ struct ConsumerTest : testing::Test {
         customer.addRental( Rental( Movie("Snow White", Movie::CHILDRENS), 3 ));
 
     }
-
-    ~ConsumerTest() {
-
-    }
-
 };
 
+
+TEST(NewReleaseCalculator, AmountIsCorrect) {
+
+    NewReleaseCalculator newReleaseCalculator = NewReleaseCalculator(5);
+
+    ASSERT_EQ(newReleaseCalculator.getAmount(), 15);
+
+}
+
+TEST(NewReleaseCalculator, FrequentPointIsCorrect) {
+
+
+    NewReleaseCalculator newReleaseCalculator = NewReleaseCalculator(1);
+
+    EXPECT_EQ(newReleaseCalculator.getFrequentRenterPoints(), 1);
+
+
+    newReleaseCalculator = NewReleaseCalculator(5);
+
+    EXPECT_EQ(newReleaseCalculator.getFrequentRenterPoints(), 2);
+}
+
+
+TEST(ChildrensCalculator, AmountIsCorrect) {
+
+    ChildrensCalculator childrensCalculator = ChildrensCalculator(2);
+
+    EXPECT_EQ(childrensCalculator.getAmount(), 1.5);
+
+    childrensCalculator = ChildrensCalculator(5);
+
+    EXPECT_EQ(childrensCalculator.getAmount(), 4.5);
+
+}
+
+TEST(ChildrensCalculator, FrequentPointIsCorrect) {
+
+
+    ChildrensCalculator childrensCalculator = ChildrensCalculator(5);
+
+    ASSERT_EQ(childrensCalculator.getFrequentRenterPoints(), 1);
+}
+
+
+TEST(RegularCalculator, AmountIsCorrect) {
+
+    RegularCalculator regularCalculator = RegularCalculator(1);
+
+    EXPECT_EQ(regularCalculator.getAmount(), 2);
+
+    regularCalculator = RegularCalculator(5);
+
+    EXPECT_EQ(regularCalculator.getAmount(), 6.5);
+
+}
+
+TEST(RegularCalculator, FrequentPointIsCorrect) {
+
+
+    RegularCalculator regularCalculator = RegularCalculator(5);
+
+    ASSERT_EQ(regularCalculator.getFrequentRenterPoints(), 1);
+}
 
 //TEST customer statement
 TEST_F(ConsumerTest, ConsumerStatementValue){
