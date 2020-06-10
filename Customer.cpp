@@ -33,7 +33,7 @@ Customer::StatementData Customer::CreateStatementData(){
 
     for (const Rental& eachRental : _rentals) {
 
-        RentalCalculator* calculator = createRentalCalculator(eachRental.getMovie().getPriceCode(), eachRental.getDaysRented());
+        RentalCalculator* calculator = createRentalCalculator(eachRental.getMoviePriceCode(), eachRental.getDaysRented());
 
         statementData.frequentRenterPoints += calculator->getFrequentRenterPoints();
 
@@ -66,9 +66,9 @@ vector<pair<string, double>> Customer::enrichRental() {
 
     for (const Rental& eachRental : _rentals) {
 
-        RentalCalculator* calculator = createRentalCalculator(eachRental.getMovie().getPriceCode(), eachRental.getDaysRented());
+        RentalCalculator* calculator = createRentalCalculator(eachRental.getMoviePriceCode(), eachRental.getDaysRented());
 
-        result.emplace_back(eachRental.getMovie().getTitle(), calculator->getAmount());
+        result.emplace_back(eachRental.getMovieTitle(), calculator->getAmount());
 
         delete calculator;
     }
@@ -103,7 +103,7 @@ double Customer::totalAmount() {
 
     for (Rental eachRental : _rentals) {
 
-        RentalCalculator* calculator = createRentalCalculator(eachRental.getMovie().getPriceCode(), eachRental.getDaysRented());
+        RentalCalculator* calculator = createRentalCalculator(eachRental.getMoviePriceCode(), eachRental.getDaysRented());
 
         result += calculator->getAmount();
 
