@@ -11,8 +11,8 @@ class NewReleaseCalculator : public RentalCalculator {
 
 public:
 
-    NewReleaseCalculator(int moviePriceCode, int daysRented)
-            : RentalCalculator(moviePriceCode, daysRented) { }
+    NewReleaseCalculator(int daysRented)
+            : RentalCalculator(daysRented) { }
 
     virtual double getAmount();
     virtual int getFrequentRenterPoints();

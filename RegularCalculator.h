@@ -11,8 +11,8 @@ class RegularCalculator : public RentalCalculator {
 
 public:
 
-    RegularCalculator(int moviePriceCode, int daysRented)
-            : RentalCalculator(moviePriceCode, daysRented) { }
+    RegularCalculator(int daysRented)
+            : RentalCalculator(daysRented) { }
 
     virtual double getAmount();
 };

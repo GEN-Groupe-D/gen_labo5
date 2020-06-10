@@ -48,13 +48,13 @@ RentalCalculator * Customer::createRentalCalculator(int moviePriceCode, int days
 
     switch ( moviePriceCode ) {
         case Movie::REGULAR:
-            return new RegularCalculator(moviePriceCode, daysRented);
+            return new RegularCalculator(daysRented);
             break;
         case Movie::NEW_RELEASE:
-            return new NewReleaseCalculator(moviePriceCode, daysRented);
+            return new NewReleaseCalculator(daysRented);
             break;
         case Movie::CHILDRENS:
-            return new ChildrensCalculator(moviePriceCode, daysRented);
+            return new ChildrensCalculator(daysRented);
             break;
     }
 }

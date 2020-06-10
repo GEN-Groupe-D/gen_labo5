@@ -11,9 +11,8 @@ class RentalCalculator {
 
 public:
 
-    RentalCalculator(int moviePriceCode, int daysRented)
-        : moviePriceCode(moviePriceCode)
-        , daysRented(daysRented) { }
+    RentalCalculator(int daysRented)
+        : daysRented(daysRented) { }
 
 
     virtual double getAmount() = 0;
@@ -21,7 +20,6 @@ public:
     virtual int getFrequentRenterPoints();
 
 
-    int moviePriceCode;
     int daysRented;
 };
 

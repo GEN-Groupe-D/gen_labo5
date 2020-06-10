@@ -11,8 +11,8 @@ class ChildrensCalculator : public RentalCalculator {
 
 public:
 
-    ChildrensCalculator(int moviePriceCode, int daysRented)
-            : RentalCalculator(moviePriceCode, daysRented) { }
+    ChildrensCalculator(int daysRented)
+            : RentalCalculator(daysRented) { }
 
     virtual double getAmount();
 };
