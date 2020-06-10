@@ -11,13 +11,16 @@ public:
     Customer();
     explicit Customer( const std::string& name );
 
-    void addRental( const Rental& arg );
+    void addRental(  Rental* arg );
+
     std::string getName() const;
     std::string statement();
 
 private:
+
     std::string _name;
-    std::vector< Rental > _rentals;
+
+    std::vector< Rental* > _rentals;
 
     struct StatementData {
 
@@ -43,17 +46,17 @@ private:
     RentalCalculator * createRentalCalculator(int moviePriceCode, int daysRented);
 };
 
-inline Customer::
-Customer() {}
+inline Customer::Customer() {}
 
-inline Customer::
-Customer( const std::string& name )
-        : _name( name ) {}
+inline Customer::Customer( const std::string& name ) : _name( name ) {}
 
-inline void Customer::
-addRental( const Rental& arg ) { _rentals.push_back( arg ); }
+inline void Customer::addRental(  Rental* arg ) {
 
-inline std::string Customer::
-getName() const { return _name; }
+    _rentals.push_back( arg );
+}
+
+inline std::string Customer::getName() const {
+    return _name;
+}
 
 #endif // CUSTOMER_H
