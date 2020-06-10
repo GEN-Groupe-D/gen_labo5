@@ -14,6 +14,7 @@ public:
     ChildrensCalculator(int daysRented)
             : RentalCalculator(daysRented) { }
 
+
     virtual double getAmount();
 };
 

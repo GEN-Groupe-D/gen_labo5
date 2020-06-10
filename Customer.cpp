@@ -55,6 +55,7 @@ RentalCalculator * Customer::createRentalCalculator(int moviePriceCode, int days
             break;
         case Movie::CHILDRENS:
             return new ChildrensCalculator(daysRented);
+
             break;
     }
 }
