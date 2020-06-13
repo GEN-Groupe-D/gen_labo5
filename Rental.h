@@ -11,7 +11,6 @@ public:
     Rental();
 
     virtual int getDaysRented() const;
-    virtual int getMoviePriceCode() const;
     virtual std::string getMovieTitle() const;
     virtual double getMoviePrice() const;
     virtual int getMovieFrequentPoint() const;
@@ -31,12 +30,6 @@ inline int Rental::getDaysRented() const {
     return _daysRented;
 }
 
-
-//REMOVE MESSAGE CHAIN BETWEEN Customer and Movie
-inline int Rental::getMoviePriceCode() const {
-
-    return _movie.getPriceCode();
-}
 
 //REMOVE MESSAGE CHAIN BETWEEN Customer and Movie
 inline std::string Rental::getMovieTitle() const {
