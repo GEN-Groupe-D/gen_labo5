@@ -42,8 +42,6 @@ private:
     std::vector<std::pair<std::string, double>> enrichRental();
 
     StatementData CreateStatementData();
-
-    PriceCalculator * createRentalCalculator(int moviePriceCode, int daysRented);
 };
 
 inline Customer::Customer() {}
