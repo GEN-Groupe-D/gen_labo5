@@ -12,7 +12,6 @@ public:
 
     Movie( const std::string& title, PriceCalculator* calculator);
 
-    void setPriceCode( int arg );
     std::string getTitle() const;
     double getPrice(int nbDays) const;
     int getFrequentPoint(int nbDays) const;
