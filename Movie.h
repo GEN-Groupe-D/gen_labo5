@@ -15,7 +15,6 @@ public:
 
     Movie( const std::string& title, PriceCalculator* calculator, int priceCode = REGULAR );
 
-    int getPriceCode() const;
     void setPriceCode( int arg );
     std::string getTitle() const;
     double getPrice(int nbDays) const;
@@ -30,11 +29,6 @@ private:
 inline Movie::Movie( const std::string& title, PriceCalculator *calculator, int priceCode) : _title( title ), _priceCode( priceCode ) {
 
     priceCalculator = calculator;
-}
-
-inline int Movie::getPriceCode() const {
-
-    return _priceCode;
 }
 
 inline void Movie::setPriceCode( int arg ) {
