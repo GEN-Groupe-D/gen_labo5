@@ -7,13 +7,10 @@
 class Movie {
 
 public:
-    static const int CHILDRENS   = 2;
-    static const int REGULAR     = 0;
-    static const int NEW_RELEASE = 1;
 
     PriceCalculator* priceCalculator;
 
-    Movie( const std::string& title, PriceCalculator* calculator, int priceCode = REGULAR );
+    Movie( const std::string& title, PriceCalculator* calculator);
 
     void setPriceCode( int arg );
     std::string getTitle() const;
@@ -23,17 +20,11 @@ public:
 
 private:
     std::string _title;
-    int _priceCode;
 };
 
-inline Movie::Movie( const std::string& title, PriceCalculator *calculator, int priceCode) : _title( title ), _priceCode( priceCode ) {
+inline Movie::Movie( const std::string& title, PriceCalculator *calculator) : _title( title ) {
 
     priceCalculator = calculator;
-}
-
-inline void Movie::setPriceCode( int arg ) {
-
-    _priceCode = arg;
 }
 
 inline std::string Movie::getTitle() const {
