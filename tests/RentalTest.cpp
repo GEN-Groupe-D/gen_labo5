@@ -12,6 +12,10 @@ using namespace std;
 
 class MockMovie : public Movie {
 public:
+
+    MockMovie() : Movie("", new RegularCalculator) {}
+    ~MockMovie() {delete(priceCalculator);}
+
     MOCK_METHOD(string, getTitle, (), (const));
     MOCK_METHOD(double, getPrice, (), (const));
     MOCK_METHOD(int, getFrequentPoint, (), (const));

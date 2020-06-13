@@ -9,6 +9,7 @@ class Rental {
 public:
     Rental( Movie* movie, int daysRented );
     Rental();
+    ~Rental();
 
     virtual int getDaysRented() const;
     virtual std::string getMovieTitle() const;
@@ -29,6 +30,11 @@ inline Rental::Rental( Movie* movie, int daysRented ) : _daysRented( daysRented 
 inline Rental::Rental() : _daysRented(0) {
 
     _movie = new Movie("DEFAULT", new RegularCalculator());
+}
+
+inline Rental::~Rental() {
+
+    //delete _movie;
 }
 
 inline int Rental::getDaysRented() const {

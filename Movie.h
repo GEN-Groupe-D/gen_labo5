@@ -2,6 +2,7 @@
 #ifndef MOVIE_H
 #define MOVIE_H
 #include <string>
+#include <bits/unique_ptr.h>
 #include "PriceCalculator.h"
 #include "RegularCalculator.h"
 
@@ -11,8 +12,6 @@ public:
 
 
     Movie( const std::string& title, PriceCalculator* calculator);
-    Movie();
-    ~Movie();
 
     virtual std::string getTitle() const;
     virtual double getPrice(int nbDays) const;
@@ -21,22 +20,13 @@ public:
 
 private:
     std::string _title;
+protected:
     PriceCalculator* priceCalculator;
 };
 
 inline Movie::Movie( const std::string& title, PriceCalculator *calculator) : _title( title ) {
 
     priceCalculator = calculator;
-}
-
-inline Movie::~Movie() {
-
-    delete priceCalculator;
-}
-
-inline Movie::Movie() {
-    _title = "";
-    priceCalculator = new RegularCalculator();
 }
 
 inline std::string Movie::getTitle() const {
