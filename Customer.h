@@ -36,7 +36,6 @@ private:
 
     double totalAmount();
 
-
     std::string renderPlainText(StatementData data);
 
     std::vector<std::pair<std::string, double>> enrichRental();

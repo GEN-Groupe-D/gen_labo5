@@ -38,7 +38,6 @@ Customer::StatementData Customer::CreateStatementData(){
     return statementData;
 }
 
-
 vector<pair<string, double>> Customer::enrichRental() {
 
     vector<pair<string, double>> result;

@@ -7,7 +7,7 @@
 
 class Rental {
 public:
-    Rental( const Movie& movie, int daysRented );
+    Rental( Movie* movie, int daysRented );
     Rental();
 
     virtual int getDaysRented() const;
@@ -16,14 +16,20 @@ public:
     virtual int getMovieFrequentPoint() const;
 
 private:
-    Movie _movie;
+    Movie* _movie;
     int _daysRented;
 };
 
-inline Rental::Rental( const Movie& movie, int daysRented ) : _movie( movie ), _daysRented( daysRented ) {}
+inline Rental::Rental( Movie* movie, int daysRented ) : _daysRented( daysRented ) {
+
+    _movie = movie;
+}
 
 //CONSTRUCTOR FOR MOCK TEST
-inline Rental::Rental() : _movie(Movie("DEFAULT", new RegularCalculator())), _daysRented(0) { }
+inline Rental::Rental() : _daysRented(0) {
+
+    _movie = new Movie("DEFAULT", new RegularCalculator());
+}
 
 inline int Rental::getDaysRented() const {
 
@@ -34,17 +40,17 @@ inline int Rental::getDaysRented() const {
 //REMOVE MESSAGE CHAIN BETWEEN Customer and Movie
 inline std::string Rental::getMovieTitle() const {
 
-    return _movie.getTitle();
+    return _movie->getTitle();
 }
 
 inline double Rental::getMoviePrice() const{
 
-    return _movie.getPrice(_daysRented);
+    return _movie->getPrice(_daysRented);
 }
 
 inline int Rental::getMovieFrequentPoint() const{
 
-    return _movie.getFrequentPoint(_daysRented);
+    return _movie->getFrequentPoint(_daysRented);
 }
 
 #endif // RENTAL_H
