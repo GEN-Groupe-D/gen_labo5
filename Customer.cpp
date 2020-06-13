@@ -1,7 +1,7 @@
 // Customer.cpp
 #include <sstream>
 #include "Customer.h"
-#include "RentalCalculator.h"
+#include "PriceCalculator.h"
 #include "RegularCalculator.h"
 #include "NewReleaseCalculator.h"
 #include "ChildrensCalculator.h"
@@ -22,7 +22,6 @@ Customer::StatementData Customer::CreateStatementData(){
 
     StatementData statementData = StatementData();
 
-
     statementData.customerName = getName();
     statementData.rentalsInfos = enrichRental();
     statementData.totalAmount = totalAmount();
@@ -31,32 +30,14 @@ Customer::StatementData Customer::CreateStatementData(){
 
     for (const Rental* eachRental : _rentals) {
 
-        RentalCalculator* calculator = createRentalCalculator(eachRental->getMoviePriceCode(), eachRental->getDaysRented());
+        statementData.frequentRenterPoints += eachRental->getMovieFrequentPoint();
 
-        statementData.frequentRenterPoints += calculator->getFrequentRenterPoints();
-
-        delete calculator;
     }
 
 
     return statementData;
 }
 
-RentalCalculator * Customer::createRentalCalculator(int moviePriceCode, int daysRented) {
-
-    switch ( moviePriceCode ) {
-        case Movie::REGULAR:
-            return new RegularCalculator(daysRented);
-            break;
-        case Movie::NEW_RELEASE:
-            return new NewReleaseCalculator(daysRented);
-            break;
-        case Movie::CHILDRENS:
-            return new ChildrensCalculator(daysRented);
-
-            break;
-    }
-}
 
 vector<pair<string, double>> Customer::enrichRental() {
 
@@ -64,11 +45,7 @@ vector<pair<string, double>> Customer::enrichRental() {
 
     for (const Rental* eachRental : _rentals) {
 
-        RentalCalculator* calculator = createRentalCalculator(eachRental->getMoviePriceCode(), eachRental->getDaysRented());
-
-        result.emplace_back(eachRental->getMovieTitle(), calculator->getAmount());
-
-        delete calculator;
+        result.emplace_back(eachRental->getMovieTitle(), eachRental->getMoviePrice());
     }
 
     return result;
@@ -101,11 +78,7 @@ double Customer::totalAmount() {
 
     for (const Rental* eachRental : _rentals) {
 
-        RentalCalculator* calculator = createRentalCalculator(eachRental->getMoviePriceCode(), eachRental->getDaysRented());
-
-        result += calculator->getAmount();
-
-        delete calculator;
+        result += eachRental->getMoviePrice();
     }
 
     return result;

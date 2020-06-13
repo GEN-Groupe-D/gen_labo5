@@ -6,21 +6,21 @@
 
 TEST(NewReleaseCalculator, AmountIsCorrect) {
 
-    NewReleaseCalculator newReleaseCalculator = NewReleaseCalculator(5);
+    NewReleaseCalculator newReleaseCalculator = NewReleaseCalculator();
 
-    ASSERT_EQ(newReleaseCalculator.getAmount(), 15);
+    ASSERT_EQ(newReleaseCalculator.getAmount(5), 15);
 
 }
 
 TEST(NewReleaseCalculator, FrequentPointIsCorrect) {
 
 
-    NewReleaseCalculator newReleaseCalculator = NewReleaseCalculator(1);
+    NewReleaseCalculator newReleaseCalculator = NewReleaseCalculator();
 
-    EXPECT_EQ(newReleaseCalculator.getFrequentRenterPoints(), 1);
+    EXPECT_EQ(newReleaseCalculator.getFrequentRenterPoints(1), 1);
 
 
-    newReleaseCalculator = NewReleaseCalculator(5);
+    newReleaseCalculator = NewReleaseCalculator();
 
-    EXPECT_EQ(newReleaseCalculator.getFrequentRenterPoints(), 2);
+    EXPECT_EQ(newReleaseCalculator.getFrequentRenterPoints(5), 2);
 }

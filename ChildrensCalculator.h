@@ -5,20 +5,19 @@
 #ifndef LABO5_CHILDRENSCALCULATOR_H
 #define LABO5_CHILDRENSCALCULATOR_H
 
-#include "RentalCalculator.h"
+#include "PriceCalculator.h"
 
-class ChildrensCalculator : public RentalCalculator {
+class ChildrensCalculator : public PriceCalculator {
 
 public:
 
-    ChildrensCalculator(int daysRented)
-            : RentalCalculator(daysRented) { }
+    ChildrensCalculator() { }
 
 
-    virtual double getAmount();
+    virtual double getAmount(int daysRented);
 };
 
-inline double ChildrensCalculator::getAmount() {
+inline double ChildrensCalculator::getAmount(int daysRented) {
 
     double result = 1.5;
 

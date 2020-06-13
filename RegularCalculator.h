@@ -5,19 +5,18 @@
 #ifndef LABO5_REGULARCALCULATOR_H
 #define LABO5_REGULARCALCULATOR_H
 
-#include "RentalCalculator.h"
+#include "PriceCalculator.h"
 
-class RegularCalculator : public RentalCalculator {
+class RegularCalculator : public PriceCalculator {
 
 public:
 
-    RegularCalculator(int daysRented)
-            : RentalCalculator(daysRented) { }
+    RegularCalculator() { }
 
-    virtual double getAmount();
+    virtual double getAmount(int daysRented);
 };
 
-inline double RegularCalculator::getAmount() {
+inline double RegularCalculator::getAmount(int daysRented) {
 
     double result = 2;
 

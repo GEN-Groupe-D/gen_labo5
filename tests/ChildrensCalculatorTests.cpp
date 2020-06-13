@@ -6,20 +6,20 @@
 
 TEST(ChildrensCalculator, AmountIsCorrect) {
 
-    ChildrensCalculator childrensCalculator = ChildrensCalculator(2);
+    ChildrensCalculator childrensCalculator = ChildrensCalculator();
 
-    EXPECT_EQ(childrensCalculator.getAmount(), 1.5);
+    EXPECT_EQ(childrensCalculator.getAmount(2), 1.5);
 
-    childrensCalculator = ChildrensCalculator(5);
+    childrensCalculator = ChildrensCalculator();
 
-    EXPECT_EQ(childrensCalculator.getAmount(), 4.5);
+    EXPECT_EQ(childrensCalculator.getAmount(5), 4.5);
 
 }
 
 TEST(ChildrensCalculator, FrequentPointIsCorrect) {
 
 
-    ChildrensCalculator childrensCalculator = ChildrensCalculator(5);
+    ChildrensCalculator childrensCalculator = ChildrensCalculator();
 
-    ASSERT_EQ(childrensCalculator.getFrequentRenterPoints(), 1);
+    ASSERT_EQ(childrensCalculator.getFrequentRenterPoints(5), 1);
 }

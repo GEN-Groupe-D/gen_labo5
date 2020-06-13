@@ -13,7 +13,8 @@ class MockRental : public Rental {
 public:
     MOCK_METHOD(int, getDaysRented, (), (const));
     MOCK_METHOD(string, getMovieTitle, (), (const));
-    MOCK_METHOD(int, getMoviePriceCode, (), (const));
+    MOCK_METHOD(double, getMoviePrice, (), (const));
+    MOCK_METHOD(int, getMovieFrequentPoint, (), (const));
 };
 
 
@@ -25,16 +26,19 @@ TEST(Customer, StatementIsCorrect) {
 
 
     EXPECT_CALL(rental1, getMovieTitle()).WillRepeatedly(testing::Return("Karate Kid"));
-    EXPECT_CALL(rental1, getMoviePriceCode()).WillRepeatedly(testing::Return(Movie::REGULAR));
     EXPECT_CALL(rental1, getDaysRented()).WillRepeatedly(testing::Return(7));
+    EXPECT_CALL(rental1, getMoviePrice()).WillRepeatedly(testing::Return(9.5));
+    EXPECT_CALL(rental1, getMovieFrequentPoint()).WillRepeatedly(testing::Return(1));
 
     EXPECT_CALL(rental2, getMovieTitle()).WillRepeatedly(testing::Return("Avengers: Endgame"));
-    EXPECT_CALL(rental2, getMoviePriceCode()).WillRepeatedly(testing::Return(Movie::NEW_RELEASE));
     EXPECT_CALL(rental2, getDaysRented()).WillRepeatedly(testing::Return(5));
+    EXPECT_CALL(rental2, getMoviePrice()).WillRepeatedly(testing::Return(15));
+    EXPECT_CALL(rental2, getMovieFrequentPoint()).WillRepeatedly(testing::Return(2));
 
     EXPECT_CALL(rental3, getMovieTitle()).WillRepeatedly(testing::Return("Snow White"));
-    EXPECT_CALL(rental3, getMoviePriceCode()).WillRepeatedly(testing::Return(Movie::CHILDRENS));
     EXPECT_CALL(rental3, getDaysRented()).WillRepeatedly(testing::Return(3));
+    EXPECT_CALL(rental3, getMoviePrice()).WillRepeatedly(testing::Return(1.5));
+    EXPECT_CALL(rental3, getMovieFrequentPoint()).WillRepeatedly(testing::Return(1));
 
     //    Rental* r = &rental1;
 

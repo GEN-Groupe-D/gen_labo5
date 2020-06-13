@@ -5,25 +5,24 @@
 #ifndef LABO5_NEWRELEASECALCULATOR_H
 #define LABO5_NEWRELEASECALCULATOR_H
 
-#include "RentalCalculator.h"
+#include "PriceCalculator.h"
 
-class NewReleaseCalculator : public RentalCalculator {
+class NewReleaseCalculator : public PriceCalculator {
 
 public:
 
-    NewReleaseCalculator(int daysRented)
-            : RentalCalculator(daysRented) { }
+    NewReleaseCalculator() { }
 
-    virtual double getAmount();
-    virtual int getFrequentRenterPoints();
+    virtual double getAmount(int daysRented);
+    virtual int getFrequentRenterPoints(int daysRented);
 };
 
-inline double NewReleaseCalculator::getAmount() {
+inline double NewReleaseCalculator::getAmount(int daysRented) {
 
     return daysRented * 3;
 }
 
-inline int NewReleaseCalculator::getFrequentRenterPoints() {
+inline int NewReleaseCalculator::getFrequentRenterPoints(int daysRented) {
 
     int result = 1;
 

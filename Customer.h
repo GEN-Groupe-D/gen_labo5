@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include "Rental.h"
-#include "RentalCalculator.h"
+#include "PriceCalculator.h"
 
 class Customer {
 public:
@@ -43,7 +43,7 @@ private:
 
     StatementData CreateStatementData();
 
-    RentalCalculator * createRentalCalculator(int moviePriceCode, int daysRented);
+    PriceCalculator * createRentalCalculator(int moviePriceCode, int daysRented);
 };
 
 inline Customer::Customer() {}

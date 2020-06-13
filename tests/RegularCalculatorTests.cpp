@@ -6,20 +6,20 @@
 
 TEST(RegularCalculator, AmountIsCorrect) {
 
-    RegularCalculator regularCalculator = RegularCalculator(1);
+    RegularCalculator regularCalculator = RegularCalculator();
 
-    EXPECT_EQ(regularCalculator.getAmount(), 2);
+    EXPECT_EQ(regularCalculator.getAmount(1), 2);
 
-    regularCalculator = RegularCalculator(5);
+    regularCalculator = RegularCalculator();
 
-    EXPECT_EQ(regularCalculator.getAmount(), 6.5);
+    EXPECT_EQ(regularCalculator.getAmount(5), 6.5);
 
 }
 
 TEST(RegularCalculator, FrequentPointIsCorrect) {
 
 
-    RegularCalculator regularCalculator = RegularCalculator(5);
+    RegularCalculator regularCalculator = RegularCalculator();
 
-    ASSERT_EQ(regularCalculator.getFrequentRenterPoints(), 1);
+    ASSERT_EQ(regularCalculator.getFrequentRenterPoints(5), 1);
 }
